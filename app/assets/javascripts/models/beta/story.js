@@ -70,9 +70,10 @@ export const getPoints = story =>
     ? Number(story.estimate)
     : 0;
 
-export const getCompletedPoints = story => {
-  return isFeature(story) && isAccepted(story) ? story.estimate : 0;
-};
+export const getCompletedPoints = story =>
+  isFeature(story) && isAccepted(story) ? story.estimate : 0;
+
+export const isSameState = (story1, story2) => story1.state === story2.state;
 
 export const isStoryNotEstimated = (storyType, estimate) => storyType === 'feature' && !estimate;
 
