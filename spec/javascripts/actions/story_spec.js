@@ -40,7 +40,7 @@ describe('Story Actions', () => {
       );
     });
 
-    it('dispatch only toggleStory when _isDirty is false', async () => {
+    it('dispatches only toggleStory when _isDirty is false', async () => {
       const editedStory = {
         ...story,
         _editing: {
@@ -72,7 +72,7 @@ describe('Story Actions', () => {
       );
     });
 
-    it('dispatch updateStorySuccess when _isDirty', async () => {
+    it('dispatches updateStorySuccess when _isDirty', async () => {
       const editedStory = {
         ...story,
         _editing: {
@@ -105,7 +105,7 @@ describe('Story Actions', () => {
       );
     });
 
-    it('dispatch only addStory when isNew', async () => {
+    it('dispatches only addStory when isNew', async () => {
       const editedStory = {
         ...story,
         _editing: {
@@ -196,7 +196,7 @@ describe('Story Actions', () => {
       expect(FakeStory.deleteStory).toHaveBeenCalledWith(storyId, projectId);
     });
 
-    it('dispatch deleteStorySuccess', async () => {
+    it('dispatches deleteStorySuccess', async () => {
       const FakeStory = {
         findById: sinon.stub().returns(story),
         deleteStory: sinon.stub().resolves({}),
@@ -310,7 +310,7 @@ describe('Story Actions', () => {
         );
       });
 
-      it('do not dispatch updateStorySuccess', () => {
+      it('does not dispatch updateStorySuccess', () => {
         expect(fakeDispatch).not.toHaveBeenCalledWith(
           Story.updateStorySuccess(updatedStory),
         );
@@ -325,7 +325,7 @@ describe('Story Actions', () => {
       story = storyFactory();
     });
 
-    describe('when do not need of confirmation', () => {
+    describe('when does not need confirmation', () => {
       let needConfirmation;
       let confirm;
 
@@ -396,7 +396,7 @@ describe('Story Actions', () => {
       });
     });
 
-    describe('when need of confirmation', () => {
+    describe('when need confirmation', () => {
       describe('and is not confirmed', () => {
         let callback;
         let needConfirmation;
