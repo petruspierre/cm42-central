@@ -70,9 +70,6 @@ describe('Story Actions', () => {
       expect(fakeDispatch).toHaveBeenCalledWith(
         Story.toggleStory(editedStory.id),
       );
-      expect(fakeDispatch).not.toHaveBeenCalledWith(
-        Story.updateStorySuccess(story),
-      );
     });
 
     it('dispatch updateStorySuccess when _isDirty', async () => {
@@ -136,12 +133,6 @@ describe('Story Actions', () => {
       );
 
       expect(fakeDispatch).toHaveBeenCalledWith(Story.addStory(story));
-      expect(fakeDispatch).not.toHaveBeenCalledWith(
-        Story.updateStorySuccess(story),
-      );
-      expect(fakeDispatch).not.toHaveBeenCalledWith(
-        Story.toggleStory(editedStory.id),
-      );
     });
 
     it('dispatches storyFailure when promise fails', async () => {
